@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% block link %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" >
+	{% endblock %}
+</head>
+<body>
+	{% block nav %}
+    <div id="container">
+		<ul id="menu">
+			<li>
+				<a id="logo" href="{{ url_for('main')}}"><img src="{{ url_for('static', filename='logo.png') }}" border="0" width="60" height="60" alt="Лого" /></a>
+    		</li>
+  			<li><a href="{{ url_for('app_english.english')}}">Английский язык</a>
+				<ul>
+					<li><a href="{{ url_for('app_english.english_words')}}">Программирование</a></li>
+					<li><a href="{{ url_for('app_english.english_words_other')}}">Другое</a></li>
+				</ul>
+			</li>
+			<li><a href="">Python</a></li>
+			<li><a href="{{ url_for('about')}}">Об авторе</a>
+				<ul>
+					<li><a href="{{ url_for('feedback')}}">Обратная связь</a></li>
+<!--					<li><a href="#">пусто</a></li>-->
+<!--					<li><a href="#">пусто</a></li>-->
+				</ul>
+			</li>
+		</ul>
+	</div>
+	{% endblock %}
+
+	{% block content %}
+	{% endblock %}
+
+	<div id="footer">
+		<p>© 2020 Частичное или полное копирование информации с данного сайта для распространения на других ресурсах, в том числе и бумажных разрешено. Пользуйтесь на здоровье!</Пользуй></p>
+	</p></div>
+</body>
+</html>

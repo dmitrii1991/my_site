@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block link %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='english_words.css') }}" >
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <table class="responsive-table">
+    <caption>Слова, связанные с программированием - {% if now_page * 25 <=  len_all_words %} {{now_page * 25}} {% else %} {{ len_all_words }} {% endif %} из {{ len_all_words }} слов </caption>
+    <thead>
+      <tr>
+        <th scope="col">Английский</th>
+        <th scope="col">Вид</th>
+        <th scope="col">Перевод</th>
+        <th scope="col">Озвучка</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for word in all_words.items %}
+      <tr>
+        <th scope="row">{{word.word}}</th>
+        <td data-title="Released">{{word.view.name}}</td>
+        <td data-title="Studio">{{word.translation}}</td>
+        <td data-title="Worldwide Gross" data-type="currency"><audio src="/english/static/music/{{word.word}}.mp3" controls="controls" >Проиграть</audio></td>
+     </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+  <div align="center">
+  {% if all_words.has_prev %}<a class="button-hover"  data-text="Предыдущая страница" href="{{ url_for('app_english.english_words', page = all_words.prev_num) }}"><< Предыдущая страница</a>{% else %}<a class="button-hover" data-text="Предыдущих страниц нет!"><< Предыдущая страница</a>  {% endif %}
+  {% if all_words.has_next %}<a class="button-hover" data-text="Следующая страница" href="{{ url_for('app_english.english_words', page = all_words.next_num) }}">Следующая страница>></a>{% else %}<a class="button-hover" data-text="Следующих страниц нет!">Следующая страница >></a>{% endif %}
+  </div>
+{% endblock %}
+

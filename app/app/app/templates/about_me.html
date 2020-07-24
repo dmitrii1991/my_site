@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block link %}
+{{ super() }}
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='about.css') }}" >
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <div class="title">DMITRIY PYTHON DEVELOPER</div>
+      <div class="subtitle"> I LIKE TO DEVELOP AND SOLVE THE UNSOLVABLE </div>
+    </div>
+
+    <div class="content">
+        <div class="card first">
+            <h1>Начало блога</h1>
+            <p class="date">08 июнь, 2020</p>
+            <p class="text">
+            Меня зовут Дмитрий. В данный момент являюсь junior+ python разработчиком. До разработки я окончил обучение
+            СПБГУ по направлению "Землеустройство и кадастры" и "Управление Землепользованием". Работал в Росреестре в
+            качестве инженера, Строительной компании - менеджером отдела сервиса, управляющей компании - менеджером
+            рекламы и СМИ, МТС - специалист арендный отношений. Но после МТС мне захотелось свободы в рабочем процессе,
+            отойти от монотонной и рутиной работы, заняться саморазвитием - подтянуть английский, разобраться в технологиях,
+            освоить программирование и ... вот мой мини блог.</p>
+        </div>
+    </div>
+
+{% endblock %}

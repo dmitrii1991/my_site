@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: site.dockerfile
+    container_name: site_container
+    ports:
+    - 3001:80
+    environment:
+      - HOST=***
+      - DBNAME=***
+      - USER=***
+      - PASSWORD=***
+      - STATIC_PATH=/app/app/static

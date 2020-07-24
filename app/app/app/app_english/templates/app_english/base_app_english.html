@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block link %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('app_english.static', filename='base_app_english.css') }}" >
+{% endblock %}
+
+{% block content %}
+<div class="block dir">
+    <h1 class="neon">The English language is<br>the door to your future</h1>
+    <p>Этот подраздел сайта содержит материал для изучение английского языка. Известно, главная проблема начинающего программиста - малый словарный запас</p>
+    <div>
+        <p>Некоторые полезные материалы для повторения/изучения английского языка</p>
+        <a href="https://www.native-english.ru/grammar">План по изучению грамматики английского языка.</a><br>
+        <a href="https://www.irregularverbs.ru/table/">Таблица неправильных глаголов.</a><br>
+        <a href="https://www.studynow.ru/grammar/phrasalverbs">Самые распространённые английские фразовые глаголы</a><br>
+        <a href="https://langformula.ru/phrasal-verbs/">140 фразовых глаголов с примерами и переводом</a><br>
+    </div>
+
+    <p></p>
+    <p></p>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='errors/404.css') }}" >
+  <meta charset="utf-8">
+	<title>404 Page no found</title>
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+	<div class="error-page-wrap">
+		<article class="error-page gradient">
+			<hgroup>
+				<h1>404</h1>
+				<h2>oops! page not found</h2>
+			</hgroup>
+			<a href="{{ url_for('main')}}" title="Back to site" class="error-back">На главную</a>
+		</article>
+	</div>
+</body>
+</html>
